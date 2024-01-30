@@ -10,38 +10,38 @@ Make sure you have the Java Development Kit (JDK) installed on your machine. Ope
 As the program is not compilated at all you must open directly on an IDE and run the login.java file.
 In `Conexao.java` change `databaseURL = "jdbc:postgresql://localhost:5432/projetoNakahata"; user = "postgres"; password = "postgres";` to your configs, not connecting? create 
 the tables on postgresql:
-`
-CREATE TABLE aluno (
+
+`CREATE TABLE aluno (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     login VARCHAR(255),
     password VARCHAR(255),
     pontos INTEGER
-);
+);`
 
-CREATE TABLE exercicio (
+`CREATE TABLE exercicio (
     id SERIAL PRIMARY KEY,
     pergunta TEXT,
     palavra_testada1 VARCHAR(100),
     palavra_testada2 VARCHAR(100),
     palavra_testada3 VARCHAR(100),
     pontos INTEGER
-);
+);`
 
-CREATE TABLE professor (
+`CREATE TABLE professor (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     login VARCHAR(255),
     password VARCHAR(255)
-);
+);`
 
-CREATE TABLE exercicios_usuarios (
+`CREATE TABLE exercicios_usuarios (
     id_usuarios INTEGER REFERENCES aluno(id),
     id_exercicio INTEGER REFERENCES exercicio(id),
     data_realizacao TIMESTAMP WITHOUT TIME ZONE,
     PRIMARY KEY (id_usuarios, id_exercicio)
-);
-`
+);`
+
 ## Program Usage
 
 
