@@ -36,6 +36,27 @@ public class Conexao {
         System.out.println("Conexão realizada com sucesso.");
     }
 
+ // Método para obter os 5 alunos com mais pontos
+    public List<String> obterTop5AlunosMaisPontuadosDeSempre() throws SQLException {
+        List<String> topAlunos = new ArrayList<>();
+        String sql = "SELECT name, pontos " +
+                     "FROM aluno " +
+                     "ORDER BY pontos DESC " +
+                     "LIMIT 5";
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()) {
+                String nomeAluno = resultSet.getString("name");
+                int totalPontos = resultSet.getInt("pontos");
+                String infoAluno = nomeAluno + ": " + totalPontos + " pontos";
+                topAlunos.add(infoAluno);
+            }
+        }
+        return topAlunos;
+    }
+
+
+    
     // Método para obter os pontos de um aluno com base no login
     public int obterPontosAluno(String login) throws SQLException {
         String sql = "SELECT pontos FROM aluno WHERE login = ?";

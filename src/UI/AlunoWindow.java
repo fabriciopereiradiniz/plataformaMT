@@ -114,7 +114,19 @@ public class AlunoWindow extends JFrame {
 
         JMenuItem mntmNewMenuItem = new JMenuItem("MT Reconhecedora"); // Criação de um item de menu
         menuMT.add(mntmNewMenuItem); // Adição do item de menu ao menu
+        
+        JMenuItem mntmNewMenuItem_1 = new JMenuItem("Ranking"); // Criação de um item de menu
+        menuBar.add(mntmNewMenuItem_1); // Adição do item de menu ao menu
 
+        // ActionListener para o item "Ranking"
+        mntmNewMenuItem_1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Abre a janela Reconhecedora
+                Ranking ranking = new Ranking();
+                ranking.showWindow(); // Exibe a janela Reconhecedora
+            }
+        });        
+        
         // ActionListener para o item "MT Reconhecedora"
         mntmNewMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
