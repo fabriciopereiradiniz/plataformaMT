@@ -1,7 +1,7 @@
 # 👨‍💻 plataformaMT
-This project was developed as a part of my coursework at UNESPAR (Universidade Estadual do Paraná) for the "Linguagens Formais e Autômatos" (Formal Languages and Automata) course. It provides a hands-on experience with a simplified Turing Machine, focusing on configuration setup, transitions, and the execution of Turing Machine operations.
 
-Check the technical report [HERE](./Relatorio4BI.pdf).
+| ![instruction_process](https://i.imgur.com/1jZRPKp.gif) | This project was developed as a part of my coursework at UNESPAR (Universidade Estadual do Paraná) for the "Linguagens Formais e Autômatos" (Formal Languages and Automata) course. Learn Turing machines through interactive exercises. Earn points as you solve problems. Enhance your understanding of computational theory. Check the technical report [HERE](./Relatorio4BI.pdf). |
+|---|---|
 
 ## Compilation and Execution of the Program
 
@@ -41,6 +41,11 @@ the tables on postgresql:
     data_realizacao TIMESTAMP WITHOUT TIME ZONE,
     PRIMARY KEY (id_usuarios, id_exercicio)
 );`
+
+
+<div align="right">
+  <img src="https://i.imgur.com/wu5eh6H.gif" alt="java" width="150">
+</div>
 
 ## Program Usage
 
