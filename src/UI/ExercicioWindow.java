@@ -30,12 +30,13 @@ public class ExercicioWindow {
     // Método de inicialização da janela de exercício
     private void initialize() {
         frame = new JFrame(); // Inicialização da janela
-        frame.setBounds(100, 100, 1300, 720); // Definição das dimensões da janela
+        frame.setBounds(100, 100, 700, 550); // Definição das dimensões da janela
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definição do comportamento ao fechar a janela
         frame.setResizable(false); // Desabilitação do redimensionamento da janela
 
         // Criação do botão para abrir o CMD com AutomatoExecutor
-        JButton btnAbrirCMD = new JButton("Abrir CMD com AutomatoExecutor");
+        MyButton btnAbrirCMD = new MyButton();
+        btnAbrirCMD.setText("Abrir CMD com AutomatoExecutor");
         btnAbrirCMD.setBounds(380, 425, 250, 30); // Definição das dimensões e posição do botão
         btnAbrirCMD.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
