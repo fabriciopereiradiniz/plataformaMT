@@ -5,16 +5,43 @@ Check the technical report [HERE](./Relatorio4BI.pdf).
 
 ## Compilation and Execution of the Program
 
-Make sure you have the Java Development Kit (JDK) installed on your machine. Open a terminal or command prompt and navigate to the directory where the program folder `scr` is located.
+Make sure you have the Java Development Kit (JDK) installed on your machine. Open your IDE and configure postgresql and jgoodies on the classpath of the project, you also will need to install and configure Java Swing.
 
-Compile the source code by entering the following command:
+As the program is not compilated at all you must open directly on an IDE and run the login.java file.
+In `Conexao.java` change `databaseURL = "jdbc:postgresql://localhost:5432/projetoNakahata"; user = "postgres"; password = "postgres";` to your configs, not connecting? create 
+the tables on postgresql:
+`
+CREATE TABLE aluno (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    login VARCHAR(255),
+    password VARCHAR(255),
+    pontos INTEGER
+);
 
-`javac entities/Estados.java application/Program.java`
+CREATE TABLE exercicio (
+    id SERIAL PRIMARY KEY,
+    pergunta TEXT,
+    palavra_testada1 VARCHAR(100),
+    palavra_testada2 VARCHAR(100),
+    palavra_testada3 VARCHAR(100),
+    pontos INTEGER
+);
 
-After compilation, execute the program by typing the following command:
+CREATE TABLE professor (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    login VARCHAR(255),
+    password VARCHAR(255)
+);
 
-`java application.Program`
-
+CREATE TABLE exercicios_usuarios (
+    id_usuarios INTEGER REFERENCES aluno(id),
+    id_exercicio INTEGER REFERENCES exercicio(id),
+    data_realizacao TIMESTAMP WITHOUT TIME ZONE,
+    PRIMARY KEY (id_usuarios, id_exercicio)
+);
+`
 ## Program Usage
 
 
